@@ -49,7 +49,7 @@ define pgpool::pcp (
     default => $ensure,
   }
 
-  file_line { $name:
+  file_line { "pcp-${name}":
     ensure => $ensure_real,
     path   => $target_real,
     line   => "${name}:${password_hash}",
